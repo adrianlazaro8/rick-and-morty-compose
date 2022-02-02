@@ -9,7 +9,9 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import com.adrianlazaro8.rickmorty.ui.RickMortyApp
 import com.adrianlazaro8.rickmorty.ui.theme.RickMortyTheme
 
 class MainActivity : ComponentActivity() {
@@ -17,15 +19,10 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            RickMortyTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android")
-                }
+            RickMortyApp {
+                Greeting(name = "Android")
             }
+
         }
     }
 }
@@ -38,7 +35,7 @@ fun Greeting(name: String) {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    RickMortyTheme {
+    RickMortyApp {
         Greeting("Android")
     }
 }
