@@ -14,7 +14,7 @@ interface RickMortyApi {
     fun getAllCharacters(): PaginatedResult<Character>
 
     @GET("api/character/{id}")
-    fun getSingleCharacter(@Path("id") id: String)
+    fun getSingleCharacter(@Path("id") id: String): Character
 
     @GET("api/character/")
     fun filteredCharacters(
