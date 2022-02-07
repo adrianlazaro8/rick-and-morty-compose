@@ -1,6 +1,8 @@
 package com.adrianlazaro8.rickmorty.ui.theme
 
 import androidx.compose.material.Typography
+import androidx.compose.ui.graphics.Color.Companion.Gray
+import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -31,19 +33,22 @@ val Nunito = FontFamily(
 // Set of Material typography styles to start with
 val Typography = Typography(
     defaultFontFamily = Nunito,
+    h3 = TextStyle(
+        fontWeight = FontWeight.ExtraBold,
+        fontSize = 48.sp
+    ),
+    h6 = TextStyle(
+        color = White,
+        fontSize = 20.sp,
+        fontWeight = FontWeight.Bold
+    ),
+    subtitle1 = TextStyle(
+        fontWeight = FontWeight.Thin,
+        fontSize = 16.sp,
+        color = Gray,
+        letterSpacing = 0.15.sp
+    ),
     body1 = TextStyle(
         fontSize = 16.sp
     )
-    /* Other default text styles to override
-    button = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.W500,
-        fontSize = 14.sp
-    ),
-    caption = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 12.sp
-    )
-    */
 )

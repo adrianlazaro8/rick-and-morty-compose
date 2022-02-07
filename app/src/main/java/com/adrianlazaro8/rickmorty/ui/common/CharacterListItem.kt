@@ -26,7 +26,7 @@ fun CharacterListItem(
             .padding(10.dp)
     ) {
         Card(
-            elevation = 50.dp,
+            elevation = 8.dp,
             shape = RoundedCornerShape(20.dp),
             modifier = Modifier
                 .height(300.dp)
@@ -42,7 +42,7 @@ fun CharacterListItem(
         Spacer(modifier = Modifier.height(10.dp))
         Text(
             text = character.name,
-            style = MaterialTheme.typography.h5
+            style = MaterialTheme.typography.h6
         )
         Text(
             text = character.gender,
