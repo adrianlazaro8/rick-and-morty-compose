@@ -33,9 +33,9 @@ val Nunito = FontFamily(
 // Set of Material typography styles to start with
 val Typography = Typography(
     defaultFontFamily = Nunito,
-    h3 = TextStyle(
+    h5 = TextStyle(
         fontWeight = FontWeight.ExtraBold,
-        fontSize = 48.sp
+        fontSize = 24.sp
     ),
     h6 = TextStyle(
         color = White,
