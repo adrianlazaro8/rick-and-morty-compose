@@ -18,6 +18,7 @@ import com.adrianlazaro8.rickmorty.domain.CharacterStatus
 import com.adrianlazaro8.rickmorty.domain.Location
 import com.adrianlazaro8.rickmorty.domain.Origin
 import com.adrianlazaro8.rickmorty.ui.common.CharacterListItem
+import com.adrianlazaro8.rickmorty.ui.common.LazyVerticalGridWithHeader
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -25,22 +26,10 @@ fun CharactersScreen(
     characters: List<Character>
 ) {
     if (characters.isNotEmpty()) {
-        Column {
-            Text(
-                text = stringResource(R.string.characters),
-                style = MaterialTheme.typography.h5,
-                modifier = Modifier.padding(start = 10.dp)
-            )
-
-            LazyVerticalGrid(
-                cells = GridCells.Fixed(2)
-            )
-            {
-                items(characters.size) { index ->
-                    CharacterListItem(character = characters[index])
-                }
-            }
-        }
+        LazyVerticalGridWithHeader(
+            title = stringResource(id = R.string.characters),
+            count = characters.count(),
+            gridItem = { CharacterListItem(character = characters[it]) })
     }
 }
 
