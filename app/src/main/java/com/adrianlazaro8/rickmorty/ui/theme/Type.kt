@@ -22,7 +22,7 @@ val Nunito = FontFamily(
     Font(R.font.nunito_extralight, FontWeight.ExtraLight, FontStyle.Normal),
     Font(R.font.nunito_italic, FontWeight.Normal, FontStyle.Italic),
     Font(R.font.nunito_light, FontWeight.Light, FontStyle.Normal),
-    Font(R.font.nunito_lightitalic, FontWeight.Black, FontStyle.Italic),
+    Font(R.font.nunito_lightitalic, FontWeight.Light, FontStyle.Italic),
     Font(R.font.nunito_medium, FontWeight.Medium, FontStyle.Normal),
     Font(R.font.nunito_mediumitalic, FontWeight.Medium, FontStyle.Italic),
     Font(R.font.nunito_regular, FontWeight.Normal, FontStyle.Normal),
