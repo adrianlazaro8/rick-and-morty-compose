@@ -17,7 +17,7 @@ class DataModule {
 
     @Provides
     @Singleton
-    fun provideRemoteDataSource(rickMortyApi: RickMortyApi) =
+    fun provideRemoteDataSource(rickMortyApi: RickMortyApi): RemoteDataSource =
         RickMortyDataSource(rickMortyApi)
 
     @Provides
@@ -27,11 +27,11 @@ class DataModule {
 
     @Provides
     @Singleton
-    fun provideApiService() {
+    fun provideApiService(): RickMortyApi {
         val retrofit = Retrofit.Builder()
             .baseUrl("https://rickandmortyapi.com/api/")
             .build()
 
-        retrofit.create(RickMortyApi::class.java)
+        return retrofit.create(RickMortyApi::class.java)
     }
 }

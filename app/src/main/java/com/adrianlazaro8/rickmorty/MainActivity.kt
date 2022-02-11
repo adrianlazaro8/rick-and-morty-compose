@@ -22,7 +22,6 @@ class MainActivity : ComponentActivity() {
             RickMortyApp {
                 Greeting(name = "Android")
             }
-
         }
     }
 }
