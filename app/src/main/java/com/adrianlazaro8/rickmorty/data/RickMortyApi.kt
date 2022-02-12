@@ -11,13 +11,13 @@ import retrofit2.http.Query
 interface RickMortyApi {
 
     @GET("api/character")
-    fun getAllCharacters(): PaginatedResult<Character>
+    suspend fun getAllCharacters(): PaginatedResult<List<Character>>
 
     @GET("api/character/{id}")
-    fun getSingleCharacter(@Path("id") id: String): Character
+    suspend fun getSingleCharacter(@Path("id") id: String): Character
 
     @GET("api/character/")
-    fun filteredCharacters(
+    suspend fun filteredCharacters(
         @Query("name") name: String,
         @Query("status") status: String,
         @Query("species") species: String,
@@ -26,26 +26,26 @@ interface RickMortyApi {
     ): PaginatedResult<Character>
 
     @GET("api/location")
-    fun getAllLocations(): PaginatedResult<Location>
+    suspend fun getAllLocations(): PaginatedResult<Location>
 
     @GET("api/location/{id}")
-    fun getSingleLocation(@Path("id") id: String): Location
+    suspend fun getSingleLocation(@Path("id") id: String): Location
 
     @GET("api/location/")
-    fun getFilteredLocations(
+    suspend fun getFilteredLocations(
         @Query("name") name: String,
         @Query("type") type: String,
         @Query("dimension") dimension: String
     ): PaginatedResult<Location>
 
     @GET("api/episode")
-    fun getAllEpisodes(): PaginatedResult<Episode>
+    suspend fun getAllEpisodes(): PaginatedResult<Episode>
 
     @GET("api/episode/{id}")
-    fun getSingleEpisode(@Path("id") id: String): Episode
+    suspend fun getSingleEpisode(@Path("id") id: String): Episode
 
     @GET("api/episode/")
-    fun getFilteredLocations(
+    suspend fun getFilteredLocations(
         @Query("name") name: String,
         @Query("episode") episode: String
     ): PaginatedResult<Episode>
