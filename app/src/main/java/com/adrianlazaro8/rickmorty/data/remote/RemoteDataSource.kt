@@ -6,7 +6,7 @@ import com.adrianlazaro8.rickmorty.domain.Location
 import com.adrianlazaro8.rickmorty.domain.PaginatedResult
 
 interface RemoteDataSource {
-    suspend fun getAllCharacters(): PaginatedResult<Character>
+    suspend fun getAllCharacters(): PaginatedResult<List<Character>>
     suspend fun getSingleCharacter(id: String): Character
     suspend fun getAllLocations(): PaginatedResult<Location>
     suspend fun getSingleLocation(id: String): Location

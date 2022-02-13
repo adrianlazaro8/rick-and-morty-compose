@@ -8,7 +8,7 @@ import com.adrianlazaro8.rickmorty.domain.PaginatedResult
 
 class RickMortyDataSource(private val rickMortyApi: RickMortyApi) : RemoteDataSource {
 
-    override suspend fun getAllCharacters(): PaginatedResult<Character> {
+    override suspend fun getAllCharacters(): PaginatedResult<List<Character>> {
         return rickMortyApi.getAllCharacters()
     }
 
