@@ -57,7 +57,7 @@ fun CharacterListItemPreview() {
     val character = Character(
         1,
         "test",
-        CharacterStatus.ALIVE,
+        CharacterStatus.Alive,
         "asda",
         "asdasd",
         "asdasd",
