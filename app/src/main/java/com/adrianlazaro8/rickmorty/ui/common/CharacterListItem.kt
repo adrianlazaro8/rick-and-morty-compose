@@ -29,7 +29,7 @@ fun CharacterListItem(
             elevation = 8.dp,
             shape = RoundedCornerShape(20.dp),
             modifier = Modifier
-                .height(300.dp)
+                .height(200.dp)
         ) {
             Image(
                 painter = rememberImagePainter(data = character.image),
@@ -46,7 +46,7 @@ fun CharacterListItem(
         )
         Text(
             text = character.gender,
-            style = MaterialTheme.typography.subtitle1
+            style = MaterialTheme.typography.subtitle2
         )
     }
 }

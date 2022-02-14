@@ -8,6 +8,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.adrianlazaro8.rickmorty.ui.RickMortyApp
+import com.adrianlazaro8.rickmorty.ui.screens.characters.CharactersScreen
 import com.adrianlazaro8.rickmorty.ui.screens.characters.CharactersViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -20,21 +21,11 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             RickMortyApp {
-                Greeting(name = "Android")
+                CharactersScreen(
+                    loading = viewModel.state.loading,
+                    characters = viewModel.state.characters
+                )
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    RickMortyApp {
-        Greeting("Android")
     }
 }

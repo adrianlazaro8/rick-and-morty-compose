@@ -19,6 +19,10 @@ class CharactersViewModel @Inject constructor(
     var state by mutableStateOf(UiState())
         private set
 
+    init {
+        getAllCharacters()
+    }
+
     fun getAllCharacters() {
         viewModelScope.launch {
             state = UiState(loading = true)
