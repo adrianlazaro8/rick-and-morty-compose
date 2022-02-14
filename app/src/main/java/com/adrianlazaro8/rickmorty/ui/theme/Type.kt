@@ -1,6 +1,7 @@
 package com.adrianlazaro8.rickmorty.ui.theme
 
 import androidx.compose.material.Typography
+import androidx.compose.ui.graphics.Color.Companion.Black
 import androidx.compose.ui.graphics.Color.Companion.Gray
 import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.text.TextStyle
@@ -38,14 +39,14 @@ val Typography = Typography(
         fontSize = 24.sp
     ),
     h6 = TextStyle(
-        color = White,
+        color = Black,
         fontSize = 20.sp,
         fontWeight = FontWeight.Bold
     ),
-    subtitle1 = TextStyle(
+    subtitle2 = TextStyle(
         fontWeight = FontWeight.Thin,
-        fontSize = 16.sp,
-        color = Gray,
+        fontSize = 12.sp,
+        color = Gray.copy(alpha = 0.8f),
         letterSpacing = 0.15.sp
     ),
     body1 = TextStyle(
