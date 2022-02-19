@@ -1,6 +1,6 @@
 package com.adrianlazaro8.rickmorty.data
 
-import com.adrianlazaro8.rickmorty.domain.Character
+import com.adrianlazaro8.rickmorty.data.dto.CharacterDto
 import com.adrianlazaro8.rickmorty.domain.Episode
 import com.adrianlazaro8.rickmorty.domain.Location
 import com.adrianlazaro8.rickmorty.domain.PaginatedResult
@@ -11,10 +11,10 @@ import retrofit2.http.Query
 interface RickMortyApi {
 
     @GET("api/character")
-    suspend fun getAllCharacters(): PaginatedResult<List<Character>>
+    suspend fun getAllCharacters(): PaginatedResult<List<CharacterDto>>
 
     @GET("api/character/{id}")
-    suspend fun getSingleCharacter(@Path("id") id: String): Character
+    suspend fun getSingleCharacter(@Path("id") id: String): CharacterDto
 
     @GET("api/character/")
     suspend fun filteredCharacters(
@@ -23,7 +23,7 @@ interface RickMortyApi {
         @Query("species") species: String,
         @Query("type") type: String,
         @Query("gender") gender: String
-    ): PaginatedResult<Character>
+    ): PaginatedResult<CharacterDto>
 
     @GET("api/location")
     suspend fun getAllLocations(): PaginatedResult<Location>

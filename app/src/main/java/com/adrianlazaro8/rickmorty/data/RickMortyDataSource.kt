@@ -1,18 +1,18 @@
 package com.adrianlazaro8.rickmorty.data
 
+import com.adrianlazaro8.rickmorty.data.dto.CharacterDto
 import com.adrianlazaro8.rickmorty.data.remote.RemoteDataSource
-import com.adrianlazaro8.rickmorty.domain.Character
 import com.adrianlazaro8.rickmorty.domain.Episode
 import com.adrianlazaro8.rickmorty.domain.Location
 import com.adrianlazaro8.rickmorty.domain.PaginatedResult
 
 class RickMortyDataSource(private val rickMortyApi: RickMortyApi) : RemoteDataSource {
 
-    override suspend fun getAllCharacters(): PaginatedResult<List<Character>> {
+    override suspend fun getAllCharacters(): PaginatedResult<List<CharacterDto>> {
         return rickMortyApi.getAllCharacters()
     }
 
-    override suspend fun getSingleCharacter(id: String): Character {
+    override suspend fun getSingleCharacter(id: String): CharacterDto {
         TODO("Not yet implemented")
     }
 
