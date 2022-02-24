@@ -5,10 +5,7 @@ import arrow.core.left
 import arrow.core.right
 import com.adrianlazaro8.rickmorty.data.dto.CharacterDto
 import com.adrianlazaro8.rickmorty.data.remote.RemoteDataSource
-import com.adrianlazaro8.rickmorty.domain.Episode
-import com.adrianlazaro8.rickmorty.domain.Location
-import com.adrianlazaro8.rickmorty.domain.PaginatedResult
-import com.adrianlazaro8.rickmorty.domain.Error
+import com.adrianlazaro8.rickmorty.domain.*
 
 class RickMortyDataSource(private val rickMortyApi: RickMortyApi) : RemoteDataSource {
 
@@ -16,7 +13,7 @@ class RickMortyDataSource(private val rickMortyApi: RickMortyApi) : RemoteDataSo
         return try {
             rickMortyApi.getAllCharacters().right()
         } catch (e: Exception) {
-            Error.Unknown(e.toString()).left()
+            e.toError(e.localizedMessage ?: "").left()
         }
     }
 
