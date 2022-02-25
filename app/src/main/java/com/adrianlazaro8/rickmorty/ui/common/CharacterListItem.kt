@@ -58,15 +58,12 @@ fun CharacterListItemPreview() {
         1,
         "test",
         CharacterStatus.Alive,
-        "asda",
-        "asdasd",
         "asdasd",
         Origin("asdasd", "asdad"),
         Location(12, "asda", "asda", "asdasd", listOf(), "", ""),
         "",
         listOf(),
         "",
-        ""
     )
     CharacterListItem(character = character)
 }
