@@ -6,7 +6,7 @@ import java.io.IOException
 sealed class Error {
     object Connectivity : Error()
     class Server(val code: Int) : Error()
-    class Unknown(message: String) : Error()
+    class Unknown(val message: String) : Error()
 }
 
 fun Exception.toError(message: String = ""): Error {
