@@ -1,5 +1,7 @@
 package com.adrianlazaro8.rickmorty.domain
 
+import retrofit2.HttpException
+import java.io.IOException
 
 sealed class Error {
     object Connectivity : Error()
@@ -8,8 +10,9 @@ sealed class Error {
 }
 
 fun Exception.toError(message: String = ""): Error {
-    when (this) {
+    return when (this) {
+        is IOException -> Error.Connectivity
+        is HttpException -> Error.Server(code())
         else -> Error.Unknown(message)
     }
-    return Error.Unknown(message)
 }
