@@ -1,10 +1,10 @@
-package com.adrianlazaro8.rickmorty.data
+package com.adrianlazaro8.rickmorty.data.remote
 
 import arrow.core.Either
 import arrow.core.left
 import arrow.core.right
+import com.adrianlazaro8.rickmorty.data.RickMortyApi
 import com.adrianlazaro8.rickmorty.data.dto.CharacterDto
-import com.adrianlazaro8.rickmorty.data.remote.RemoteDataSource
 import com.adrianlazaro8.rickmorty.domain.*
 
 class RickMortyDataSource(private val rickMortyApi: RickMortyApi) : RemoteDataSource {

@@ -2,7 +2,7 @@ package com.adrianlazaro8.rickmorty.di
 
 import com.adrianlazaro8.rickmorty.data.CharactersRepository
 import com.adrianlazaro8.rickmorty.data.RickMortyApi
-import com.adrianlazaro8.rickmorty.data.RickMortyDataSource
+import com.adrianlazaro8.rickmorty.data.remote.RickMortyDataSource
 import com.adrianlazaro8.rickmorty.data.remote.RemoteDataSource
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
