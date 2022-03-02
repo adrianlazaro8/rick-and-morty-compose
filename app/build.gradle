@@ -67,6 +67,7 @@ dependencies {
 
     testImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
     testImplementation 'junit:junit:4.13.2'
+    testImplementation "io.mockk:mockk:$mockk_version"
 
     testAnnotationProcessor "com.google.dagger:hilt-compiler:$hilt_version"
 
