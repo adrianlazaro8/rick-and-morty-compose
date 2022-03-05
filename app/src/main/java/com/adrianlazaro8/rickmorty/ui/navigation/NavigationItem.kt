@@ -24,8 +24,8 @@ enum class MainNavigationItem(
 }
 
 sealed class NavigationItem(
-    private val screen: Screens,
-    private val subScreen: String = "main"
+    val screen: Screens,
+    val subScreen: String = "main"
 ) {
 
     class ContentType(screen: Screens) : NavigationItem(screen)
