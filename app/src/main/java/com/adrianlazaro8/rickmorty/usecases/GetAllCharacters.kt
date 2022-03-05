@@ -7,8 +7,8 @@ import com.adrianlazaro8.rickmorty.domain.Error
 import com.adrianlazaro8.rickmorty.domain.PaginatedResult
 
 class GetAllCharacters(private val charactersRepository: CharactersRepository) :
-    UseCase<PaginatedResult<List<Character>>> {
+    UseCase<PaginatedResult<List<Character>>?> {
 
-    override suspend fun invoke(): Either<Error, PaginatedResult<List<Character>>> =
+    override suspend fun invoke(): Either<Error, PaginatedResult<List<Character>>?> =
         charactersRepository.getAllCharacters()
 }
