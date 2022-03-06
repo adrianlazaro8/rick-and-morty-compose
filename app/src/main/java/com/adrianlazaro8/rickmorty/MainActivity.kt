@@ -3,28 +3,49 @@ package com.adrianlazaro8.rickmorty
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.viewModels
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.material.*
+import androidx.compose.runtime.getValue
+import androidx.navigation.compose.currentBackStackEntryAsState
+import androidx.navigation.compose.rememberNavController
 import com.adrianlazaro8.rickmorty.ui.RickMortyApp
-import com.adrianlazaro8.rickmorty.ui.screens.characters.CharactersScreen
-import com.adrianlazaro8.rickmorty.ui.screens.characters.CharactersViewModel
+import com.adrianlazaro8.rickmorty.ui.navigation.MainNavigationItem
+import com.adrianlazaro8.rickmorty.ui.navigation.Navigation
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    private val viewModel: CharactersViewModel by viewModels()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             RickMortyApp {
-                CharactersScreen(
-                    loading = viewModel.state.loading,
-                    characters = viewModel.state.characters
-                )
+                val navController = rememberNavController()
+                val navBackStackEntry by navController.currentBackStackEntryAsState()
+                val currentRoute = navBackStackEntry?.destination?.route ?: ""
+
+                Scaffold(
+                    bottomBar = {
+                        BottomNavigation {
+                            MainNavigationItem.values().forEach { item ->
+                                BottomNavigationItem(
+                                    selected = currentRoute.contains(item.navigationItem.screen.toString()),
+                                    onClick = { /*TODO*/ },
+                                    icon = {
+                                        Icon(
+                                            imageVector = item.icon,
+                                            contentDescription = item.title
+                                        )
+                                    },
+                                    label = {
+                                        Text(item.title)
+                                    }
+                                )
+                            }
+                        }
+                    }
+                ) {
+                    Navigation(navController)
+                }
             }
         }
     }
