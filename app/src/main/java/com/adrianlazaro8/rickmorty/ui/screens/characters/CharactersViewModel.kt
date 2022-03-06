@@ -6,7 +6,6 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import arrow.core.Either
-import arrow.core.right
 import com.adrianlazaro8.rickmorty.usecases.GetAllCharacters
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
