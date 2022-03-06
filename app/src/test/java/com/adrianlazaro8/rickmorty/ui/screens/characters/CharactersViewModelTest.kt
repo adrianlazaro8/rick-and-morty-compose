@@ -51,6 +51,16 @@ class CharactersViewModelTest {
 
         Assert.assertEquals(sucessResult, vm.state)
     }
+
+    @OptIn(ExperimentalCoroutinesApi::class)
+    @Test
+    fun `When getAllCharacters is invoked, then use case should be invoked`() = runTest {
+        coEvery { getAllCharacters.invoke() } returns successEither
+
+        vm.getAllCharacters()
+
+        coVerify { getAllCharacters.invoke() }
+    }
 }
 
 val successEither: Either<Error, PaginatedResult<List<Character>>?> = Either.Right(null)
