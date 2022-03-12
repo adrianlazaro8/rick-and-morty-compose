@@ -1,6 +1,7 @@
 package com.adrianlazaro8.rickmorty.data
 
 import com.adrianlazaro8.rickmorty.data.dto.CharacterDto
+import com.adrianlazaro8.rickmorty.data.dto.LocationDto
 import com.adrianlazaro8.rickmorty.domain.Episode
 import com.adrianlazaro8.rickmorty.domain.Location
 import com.adrianlazaro8.rickmorty.domain.PaginatedResult
@@ -26,10 +27,10 @@ interface RickMortyApi {
     ): PaginatedResult<CharacterDto>
 
     @GET("api/location")
-    suspend fun getAllLocations(): PaginatedResult<Location>
+    suspend fun getAllLocations(): PaginatedResult<List<LocationDto>>
 
     @GET("api/location/{id}")
-    suspend fun getSingleLocation(@Path("id") id: String): Location
+    suspend fun getSingleLocation(@Path("id") id: String): LocationDto
 
     @GET("api/location/")
     suspend fun getFilteredLocations(
