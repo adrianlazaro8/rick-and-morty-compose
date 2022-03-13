@@ -1,6 +1,7 @@
 package com.adrianlazaro8.rickmorty.di
 
 import com.adrianlazaro8.rickmorty.data.CharactersRepository
+import com.adrianlazaro8.rickmorty.data.LocationsRepository
 import com.adrianlazaro8.rickmorty.data.RickMortyApi
 import com.adrianlazaro8.rickmorty.data.remote.RickMortyDataSource
 import com.adrianlazaro8.rickmorty.data.remote.RemoteDataSource
@@ -27,6 +28,11 @@ class DataModule {
     @Singleton
     fun provideCharactersRepository(remoteDataSource: RemoteDataSource) =
         CharactersRepository(remoteDataSource)
+
+    @Provides
+    @Singleton
+    fun provideLocationsRepository(remoteDataSource: RemoteDataSource) =
+        LocationsRepository(remoteDataSource)
 
     @Provides
     @Singleton
