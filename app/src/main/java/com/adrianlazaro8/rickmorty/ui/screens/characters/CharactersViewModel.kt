@@ -1,5 +1,6 @@
 package com.adrianlazaro8.rickmorty.ui.screens.characters
 
+import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -12,6 +13,7 @@ import kotlinx.coroutines.launch
 import com.adrianlazaro8.rickmorty.domain.Character
 import com.adrianlazaro8.rickmorty.domain.Error
 import com.adrianlazaro8.rickmorty.domain.PaginatedResult
+import kotlinx.coroutines.delay
 import javax.inject.Inject
 
 @HiltViewModel
