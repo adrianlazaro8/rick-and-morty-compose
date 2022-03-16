@@ -10,6 +10,7 @@ import androidx.navigation.compose.rememberNavController
 import com.adrianlazaro8.rickmorty.ui.RickMortyApp
 import com.adrianlazaro8.rickmorty.ui.navigation.MainNavigationItem
 import com.adrianlazaro8.rickmorty.ui.navigation.Navigation
+import com.adrianlazaro8.rickmorty.ui.screens.MainContent
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -19,33 +20,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             RickMortyApp {
-                val navController = rememberNavController()
-                val navBackStackEntry by navController.currentBackStackEntryAsState()
-                val currentRoute = navBackStackEntry?.destination?.route ?: ""
-
-                Scaffold(
-                    bottomBar = {
-                        BottomNavigation {
-                            MainNavigationItem.values().forEach { item ->
-                                BottomNavigationItem(
-                                    selected = currentRoute.contains(item.navigationItem.screen.toString()),
-                                    onClick = { /*TODO*/ },
-                                    icon = {
-                                        Icon(
-                                            imageVector = item.icon,
-                                            contentDescription = item.title
-                                        )
-                                    },
-                                    label = {
-                                        Text(item.title)
-                                    }
-                                )
-                            }
-                        }
-                    }
-                ) {
-                    Navigation(navController)
-                }
+                MainContent()
             }
         }
     }
