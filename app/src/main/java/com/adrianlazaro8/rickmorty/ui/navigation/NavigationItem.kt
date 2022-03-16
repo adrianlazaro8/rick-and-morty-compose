@@ -10,7 +10,6 @@ enum class MainNavigationItem(
     val icon: ImageVector,
     val navigationItem: NavigationItem,
 ) {
-
     CHARACTERS(
         Screens.CHARACTERS.toString(),
         Icons.Default.Person,

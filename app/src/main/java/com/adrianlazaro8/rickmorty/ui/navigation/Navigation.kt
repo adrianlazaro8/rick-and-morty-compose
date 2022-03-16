@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.adrianlazaro8.rickmorty.ui.screens.characters.CharactersScreen
+import com.adrianlazaro8.rickmorty.ui.screens.locations.LocationsScreen
 
 @Composable
 fun Navigation(navController: NavHostController) {
@@ -17,7 +18,7 @@ fun Navigation(navController: NavHostController) {
             CharactersScreen()
         }
         composable(Screens.LOCATIONS.toString()) {
-            //TODO
+            LocationsScreen()
         }
     }
 }
