@@ -5,6 +5,7 @@ import arrow.core.left
 import arrow.core.right
 import com.adrianlazaro8.rickmorty.data.RickMortyApi
 import com.adrianlazaro8.rickmorty.data.dto.CharacterDto
+import com.adrianlazaro8.rickmorty.data.dto.EpisodeDto
 import com.adrianlazaro8.rickmorty.data.dto.LocationDto
 import com.adrianlazaro8.rickmorty.domain.*
 
@@ -34,11 +35,11 @@ class RickMortyDataSource(private val rickMortyApi: RickMortyApi) : RemoteDataSo
         TODO("Not yet implemented")
     }
 
-    override suspend fun getAllEpisodes(): Either<Error, PaginatedResult<Episode>> {
+    override suspend fun getAllEpisodes(): Either<Error, PaginatedResult<EpisodeDto>> {
         TODO("Not yet implemented")
     }
 
-    override suspend fun getSingleEpisode(id: String): Either<Error, Episode> {
+    override suspend fun getSingleEpisode(id: String): Either<Error, EpisodeDto> {
         TODO("Not yet implemented")
     }
 }

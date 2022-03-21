@@ -2,6 +2,7 @@ package com.adrianlazaro8.rickmorty.data.remote
 
 import arrow.core.Either
 import com.adrianlazaro8.rickmorty.data.dto.CharacterDto
+import com.adrianlazaro8.rickmorty.data.dto.EpisodeDto
 import com.adrianlazaro8.rickmorty.data.dto.LocationDto
 import com.adrianlazaro8.rickmorty.domain.Episode
 import com.adrianlazaro8.rickmorty.domain.Location
@@ -14,6 +15,6 @@ interface RemoteDataSource {
     suspend fun getSingleCharacter(id: String): Either<Error, CharacterDto>
     suspend fun getAllLocations(): Either<Error, PaginatedResult<List<LocationDto>>>
     suspend fun getSingleLocation(id: String): Either<Error, LocationDto>
-    suspend fun getAllEpisodes(): Either<Error, PaginatedResult<Episode>>
-    suspend fun getSingleEpisode(id: String): Either<Error, Episode>
+    suspend fun getAllEpisodes(): Either<Error, PaginatedResult<EpisodeDto>>
+    suspend fun getSingleEpisode(id: String): Either<Error, EpisodeDto>
 }
