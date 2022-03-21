@@ -30,7 +30,7 @@ class RickMortyDataSource(private val rickMortyApi: RickMortyApi) : RemoteDataSo
         }
     }
 
-    override suspend fun getSingleLocation(id: String): Either<Error, Location> {
+    override suspend fun getSingleLocation(id: String): Either<Error, LocationDto> {
         TODO("Not yet implemented")
     }
 

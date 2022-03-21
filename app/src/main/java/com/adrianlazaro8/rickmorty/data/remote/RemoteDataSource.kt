@@ -13,7 +13,7 @@ interface RemoteDataSource {
     suspend fun getAllCharacters(): Either<Error, PaginatedResult<List<CharacterDto>>>
     suspend fun getSingleCharacter(id: String): Either<Error, CharacterDto>
     suspend fun getAllLocations(): Either<Error, PaginatedResult<List<LocationDto>>>
-    suspend fun getSingleLocation(id: String): Either<Error, Location>
+    suspend fun getSingleLocation(id: String): Either<Error, LocationDto>
     suspend fun getAllEpisodes(): Either<Error, PaginatedResult<Episode>>
     suspend fun getSingleEpisode(id: String): Either<Error, Episode>
 }
