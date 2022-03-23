@@ -15,6 +15,7 @@ import com.adrianlazaro8.rickmorty.domain.Character
 import com.adrianlazaro8.rickmorty.domain.Error
 import com.adrianlazaro8.rickmorty.domain.PaginatedResult
 import com.adrianlazaro8.rickmorty.ui.common.CharacterListItem
+import com.adrianlazaro8.rickmorty.ui.common.CircularProgressBarView
 import com.adrianlazaro8.rickmorty.ui.common.ErrorView
 import com.adrianlazaro8.rickmorty.ui.common.LazyVerticalGridWithHeader
 
@@ -25,12 +26,7 @@ fun CharactersListScreen(
     characters: Either<Error, PaginatedResult<List<Character>>?>
 ) {
     if (loading) {
-        Box(
-            contentAlignment = Alignment.Center,
-            modifier = Modifier.fillMaxSize()
-        ) {
-            CircularProgressIndicator()
-        }
+        CircularProgressBarView()
     }
 
     characters.fold(
