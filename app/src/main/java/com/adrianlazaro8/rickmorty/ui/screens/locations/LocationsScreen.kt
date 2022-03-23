@@ -7,7 +7,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 fun LocationsScreen(
     locationsViewModel: LocationsViewModel = hiltViewModel()
 ) {
-
     LocationsListScreen(
         locationsViewModel.state.loading,
         locationsViewModel.state.locations
