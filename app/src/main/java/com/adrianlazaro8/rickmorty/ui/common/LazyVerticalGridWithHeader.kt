@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.dp
 fun LazyVerticalGridWithHeader(
     title: String,
     count: Int,
+    gridCellsCount: Int = 1,
     gridItem: @Composable (Int) -> Unit
 ) {
     Column {
@@ -26,7 +27,7 @@ fun LazyVerticalGridWithHeader(
         )
 
         LazyVerticalGrid(
-            cells = GridCells.Fixed(2)
+            cells = GridCells.Fixed(gridCellsCount)
         )
         {
             items(count) { index ->
