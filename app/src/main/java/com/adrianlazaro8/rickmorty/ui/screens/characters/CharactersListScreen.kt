@@ -39,6 +39,7 @@ fun CharactersListScreen(
                     LazyVerticalGridWithHeader(
                         title = stringResource(id = R.string.characters),
                         count = paginatedCharacters.results.count(),
+                        2,
                         gridItem = { CharacterListItem(character = paginatedCharacters.results[it]) })
                 }
             }
