@@ -2,6 +2,7 @@ package com.adrianlazaro8.rickmorty.ui.screens.locations
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import arrow.core.Either
 import com.adrianlazaro8.rickmorty.R
 import com.adrianlazaro8.rickmorty.domain.Error
@@ -27,10 +28,11 @@ fun LocationsListScreen(
             it?.let { paginatedLocations ->
                 if (paginatedLocations.results.isNotEmpty()) {
                     LazyVerticalGridWithHeader(
-                        title = stringResource(id = R.string.characters),
+                        title = stringResource(id = R.string.locations),
                         count = paginatedLocations.results.count(),
                         1,
-                        gridItem = { LocationListItem(paginatedLocations.results[it]) })
+                        spacedBy = 16.dp,
+                        gridItem = { LocationListItem(paginatedLocations.results[it], it + 1) })
                 }
             }
         }

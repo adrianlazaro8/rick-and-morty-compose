@@ -1,6 +1,7 @@
 package com.adrianlazaro8.rickmorty.ui.common
 
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.GridCells
@@ -9,6 +10,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -17,6 +19,7 @@ fun LazyVerticalGridWithHeader(
     title: String,
     count: Int,
     gridCellsCount: Int = 1,
+    spacedBy: Dp = 0.dp,
     gridItem: @Composable (Int) -> Unit
 ) {
     Column {
@@ -27,7 +30,8 @@ fun LazyVerticalGridWithHeader(
         )
 
         LazyVerticalGrid(
-            cells = GridCells.Fixed(gridCellsCount)
+            cells = GridCells.Fixed(gridCellsCount),
+            verticalArrangement = Arrangement.spacedBy(spacedBy)
         )
         {
             items(count) { index ->
