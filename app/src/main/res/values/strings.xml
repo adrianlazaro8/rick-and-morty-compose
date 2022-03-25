@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Rick&amp;Morty</string>
     <string name="characters">Characters</string>
+    <string name="locations">Locations</string>
 </resources>
