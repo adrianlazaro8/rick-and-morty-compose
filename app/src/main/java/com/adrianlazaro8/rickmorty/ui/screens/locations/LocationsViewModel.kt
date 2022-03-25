@@ -22,7 +22,11 @@ class LocationsViewModel @Inject constructor(
     var state by mutableStateOf(UiState())
         private set
 
-    fun getAllLocations() = viewModelScope.launch {
+    init {
+        getAllLocations()
+    }
+
+    private fun getAllLocations() = viewModelScope.launch {
         state = UiState(loading = true)
         state = UiState(locations = getAllLocations.invoke())
     }
