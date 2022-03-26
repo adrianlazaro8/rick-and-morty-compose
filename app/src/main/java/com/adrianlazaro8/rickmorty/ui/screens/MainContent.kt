@@ -3,6 +3,7 @@ package com.adrianlazaro8.rickmorty.ui.screens
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.adrianlazaro8.rickmorty.ui.navigation.MainNavigationItem
@@ -21,7 +22,10 @@ fun MainContent() {
                     BottomNavigationItem(
                         selected = currentRoute.contains(item.navigationItem.screen.toString()),
                         onClick = {
-                            navController.navigate(item.navigationItem.screen.toString())
+                            navController.navigate(item.navigationItem.screen.toString()) {
+                                popUpTo(navController.graph.findStartDestination().id)
+                                launchSingleTop = true
+                            }
                         },
                         icon = {
                             Icon(
