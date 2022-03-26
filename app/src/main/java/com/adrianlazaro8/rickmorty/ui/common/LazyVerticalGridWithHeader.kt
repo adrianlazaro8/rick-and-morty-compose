@@ -30,6 +30,7 @@ fun LazyVerticalGridWithHeader(
         )
 
         LazyVerticalGrid(
+            modifier = Modifier.padding(start = 6.dp, end = 6.dp),
             cells = GridCells.Fixed(gridCellsCount),
             verticalArrangement = Arrangement.spacedBy(spacedBy)
         )
