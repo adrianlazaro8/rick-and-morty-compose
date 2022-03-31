@@ -31,7 +31,6 @@ class LocationsViewModel @Inject constructor(
         state = UiState(locations = getAllLocations.invoke())
     }
 
-
     data class UiState(
         val loading: Boolean = false,
         val locations: Either<Error, PaginatedResult<List<Location>>?> = Either.Right(null)
