@@ -26,7 +26,7 @@ class LocationsViewModel @Inject constructor(
         getAllLocations()
     }
 
-    private fun getAllLocations() = viewModelScope.launch {
+    fun getAllLocations() = viewModelScope.launch {
         state = UiState(loading = true)
         state = UiState(locations = getAllLocations.invoke())
     }
