@@ -8,6 +8,7 @@ import com.adrianlazaro8.rickmorty.domain.PaginatedResult
 import com.adrianlazaro8.rickmorty.usecases.GetAllLocations
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
+import io.mockk.coVerify
 import io.mockk.impl.annotations.RelaxedMockK
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -45,6 +46,16 @@ class LocationsViewModelTest() {
         vm.getAllLocations()
 
         Assert.assertEquals(sucessResult, vm.state)
+    }
+
+    @OptIn(ExperimentalCoroutinesApi::class)
+    @Test
+    fun `When getAllLocations is invoked, then use case should be invoked`() = runTest {
+        coEvery { getAllLocations.invoke() } returns successEither
+
+        vm.getAllLocations()
+
+        coVerify { getAllLocations.invoke() }
     }
 }
 
