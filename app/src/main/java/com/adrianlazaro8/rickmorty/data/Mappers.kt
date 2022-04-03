@@ -3,9 +3,11 @@ package com.adrianlazaro8.rickmorty.data
 import com.adrianlazaro8.rickmorty.data.dto.CharacterDto
 import com.adrianlazaro8.rickmorty.data.dto.EpisodeDto
 import com.adrianlazaro8.rickmorty.data.dto.LocationDto
+import com.adrianlazaro8.rickmorty.data.dto.OriginDto
 import com.adrianlazaro8.rickmorty.domain.Character
 import com.adrianlazaro8.rickmorty.domain.Episode
 import com.adrianlazaro8.rickmorty.domain.Location
+import com.adrianlazaro8.rickmorty.domain.Origin
 
 fun List<CharacterDto>.toDomainCharacterList() = map { it.toDomainCharacter() }
 
@@ -15,10 +17,17 @@ fun CharacterDto.toDomainCharacter(): Character {
         name = name,
         status = status,
         gender = gender,
-        origin = origin,
-        location = location,
+        origin = origin.toDomainOrigin(),
+        location = location.toDomainLocation(),
         image = image,
         episode = episode,
+        url = url
+    )
+}
+
+fun OriginDto.toDomainOrigin(): Origin {
+    return Origin(
+        name = name,
         url = url
     )
 }
