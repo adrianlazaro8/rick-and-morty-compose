@@ -13,7 +13,7 @@ class RickMortyDataSource(private val rickMortyApi: RickMortyApi) : RemoteDataSo
 
     override suspend fun getAllCharacters(pageNumber: Int): Either<Error, PaginatedResult<List<CharacterDto>>> {
         return try {
-            rickMortyApi.getAllCharacters().right()
+            rickMortyApi.getAllCharacters(pageNumber).right()
         } catch (e: Exception) {
             e.toError(e.localizedMessage ?: "").left()
         }

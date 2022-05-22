@@ -11,8 +11,8 @@ import retrofit2.http.Query
 
 interface RickMortyApi {
 
-    @GET("api/character")
-    suspend fun getAllCharacters(): PaginatedResult<List<CharacterDto>>
+    @GET("api/character/")
+    suspend fun getAllCharacters(@Query("page") page: Int): PaginatedResult<List<CharacterDto>>
 
     @GET("api/character/{id}")
     suspend fun getSingleCharacter(@Path("id") id: String): CharacterDto
