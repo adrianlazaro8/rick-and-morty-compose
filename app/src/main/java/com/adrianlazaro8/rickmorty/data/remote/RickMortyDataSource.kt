@@ -11,7 +11,7 @@ import com.adrianlazaro8.rickmorty.domain.*
 
 class RickMortyDataSource(private val rickMortyApi: RickMortyApi) : RemoteDataSource {
 
-    override suspend fun getAllCharacters(): Either<Error, PaginatedResult<List<CharacterDto>>> {
+    override suspend fun getAllCharacters(pageNumber: Int): Either<Error, PaginatedResult<List<CharacterDto>>> {
         return try {
             rickMortyApi.getAllCharacters().right()
         } catch (e: Exception) {
