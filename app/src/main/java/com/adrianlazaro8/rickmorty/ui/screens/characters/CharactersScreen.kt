@@ -25,7 +25,6 @@ fun CharactersScreen(
     charactersViewModel: CharactersViewModel = hiltViewModel()
 ) {
     CharactersListScreen(
-        loading = charactersViewModel.state.loading,
-        characters = charactersViewModel.state.characters
+        charactersViewModel.paginatedCharacters
     )
 }
