@@ -29,7 +29,7 @@ class CharactersRepository(private val remoteDataSource: RemoteDataSource) {
 
     fun getPagedCharacters(): Flow<PagingData<Character>> {
         return Pager(
-            PagingConfig(pageSize = 20, prefetchDistance = 3)
+            PagingConfig(pageSize = 20, prefetchDistance = 10)
         ) {
             CharactersPagingSource(remoteDataSource)
         }.flow
