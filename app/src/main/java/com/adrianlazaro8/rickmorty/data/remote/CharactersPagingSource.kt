@@ -5,18 +5,19 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import arrow.core.getOrElse
 import com.adrianlazaro8.rickmorty.data.toDomainCharacterList
+import com.adrianlazaro8.rickmorty.domain.Character
 import retrofit2.HttpException
 import java.io.IOException
 
 class CharactersPagingSource(
     private val remoteDataSource: RemoteDataSource
-) : PagingSource<Int, com.adrianlazaro8.rickmorty.domain.Character>() {
+) : PagingSource<Int, Character>() {
 
-    override fun getRefreshKey(state: PagingState<Int, com.adrianlazaro8.rickmorty.domain.Character>): Int? {
+    override fun getRefreshKey(state: PagingState<Int, Character>): Int? {
         return state.anchorPosition
     }
 
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, com.adrianlazaro8.rickmorty.domain.Character> {
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Character> {
         val currentPageNumber = params.key ?: 1
 
         return try {
