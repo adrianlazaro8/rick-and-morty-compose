@@ -17,7 +17,9 @@ fun MainContent() {
 
     Scaffold(
         bottomBar = {
-            BottomNavigation {
+            BottomNavigation(
+                backgroundColor = MaterialTheme.colors.background
+            ) {
                 MainNavigationItem.values().forEach { item ->
                     BottomNavigationItem(
                         selected = currentRoute.contains(item.navigationItem.screen.toString()),
