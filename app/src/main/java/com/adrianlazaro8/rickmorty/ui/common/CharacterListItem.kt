@@ -1,6 +1,7 @@
 package com.adrianlazaro8.rickmorty.ui.common
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
@@ -19,11 +20,13 @@ import com.adrianlazaro8.rickmorty.domain.Origin
 
 @Composable
 fun CharacterListItem(
-    character: Character
+    character: Character,
+    onClick: (Character) -> Unit
 ) {
     Column(
         modifier = Modifier
             .padding(10.dp)
+            .clickable { onClick(character) }
     ) {
         Card(
             elevation = 8.dp,
@@ -65,5 +68,5 @@ fun CharacterListItemPreview() {
         listOf(),
         "",
     )
-    CharacterListItem(character = character)
+    CharacterListItem(character = character) {}
 }
