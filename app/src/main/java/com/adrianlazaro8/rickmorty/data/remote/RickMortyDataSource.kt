@@ -20,7 +20,11 @@ class RickMortyDataSource(private val rickMortyApi: RickMortyApi) : RemoteDataSo
     }
 
     override suspend fun getSingleCharacter(id: String): Either<Error, CharacterDto> {
-        TODO("Not yet implemented")
+        return try {
+            rickMortyApi.getSingleCharacter(id).right()
+        } catch (e: Exception) {
+            e.toError(e.localizedMessage ?: "").left()
+        }
     }
 
     override suspend fun getAllLocations(): Either<Error, PaginatedResult<List<LocationDto>>> {
