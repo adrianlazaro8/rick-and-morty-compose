@@ -17,14 +17,26 @@ class CharactersRepository(private val remoteDataSource: RemoteDataSource) {
 
     suspend fun getAllCharacters(): Either<Error, PaginatedResult<List<Character>>> {
         val response = remoteDataSource.getAllCharacters()
-        response.fold(ifLeft = {
-            return it.left()
+        return response.fold(ifLeft = {
+            it.left()
         }) {
-            return PaginatedResult(
+            PaginatedResult(
                 it.info,
                 it.results.toDomainCharacterList()
             ).right()
         }
+    }
+
+    suspend fun getSingleCharacter(id: String): Either<Error, Character> {
+        val response = remoteDataSource.getSingleCharacter(id)
+        return response.fold(
+            ifLeft = {
+                it.left()
+            },
+            ifRight = {
+                it.toDomainCharacter().right()
+            }
+        )
     }
 
     fun getPagedCharacters(): Flow<PagingData<Character>> {
