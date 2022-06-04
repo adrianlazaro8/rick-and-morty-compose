@@ -5,6 +5,7 @@ import com.adrianlazaro8.rickmorty.data.LocationsRepository
 import com.adrianlazaro8.rickmorty.usecases.GetAllCharacters
 import com.adrianlazaro8.rickmorty.usecases.GetAllLocations
 import com.adrianlazaro8.rickmorty.usecases.GetPaginatedCharacters
+import com.adrianlazaro8.rickmorty.usecases.GetSingleCharacter
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,5 +26,9 @@ class UsecasesModule {
     @Provides
     fun provideGetAllLocations(locationsRepository: LocationsRepository) =
         GetAllLocations(locationsRepository)
+
+    @Provides
+    fun provideGetSingleCharacter(charactersRepository: CharactersRepository) =
+        GetSingleCharacter(charactersRepository)
 
 }
