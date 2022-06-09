@@ -5,6 +5,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 
 @Composable
 fun CharacterDetailScreen(
+    id: String = "",
     characterDetailViewModel: CharacterDetailViewModel = hiltViewModel()
 ) {
 

@@ -4,9 +4,9 @@ import android.net.Uri
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import arrow.core.getOrElse
-import com.adrianlazaro8.rickmorty.data.toDomainCharacterList
 import com.adrianlazaro8.rickmorty.domain.Character
 import retrofit2.HttpException
+import toDomainCharacterList
 import java.io.IOException
 
 class CharactersPagingSource(

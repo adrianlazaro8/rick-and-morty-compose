@@ -12,6 +12,8 @@ import com.adrianlazaro8.rickmorty.domain.Character
 import com.adrianlazaro8.rickmorty.domain.Error
 import com.adrianlazaro8.rickmorty.domain.PaginatedResult
 import kotlinx.coroutines.flow.Flow
+import toDomainCharacter
+import toDomainCharacterList
 
 class CharactersRepository(private val remoteDataSource: RemoteDataSource) {
 

@@ -3,6 +3,7 @@ package com.adrianlazaro8.rickmorty.data
 import arrow.core.Either
 import arrow.core.left
 import arrow.core.right
+import com.adrianlazaro8.rickmorty.data.mappers.toDomainLocationList
 import com.adrianlazaro8.rickmorty.data.remote.RemoteDataSource
 import com.adrianlazaro8.rickmorty.domain.Character
 import com.adrianlazaro8.rickmorty.domain.Error
