@@ -35,7 +35,8 @@ fun CharactersListScreen(
         Text(
             text = stringResource(R.string.characters),
             style = MaterialTheme.typography.h5,
-            color = MaterialTheme.colors.primary
+            color = MaterialTheme.colors.primary,
+            modifier = Modifier.padding(start = 4.dp)
         )
         LazyVerticalGrid(
             cells = GridCells.Fixed(2),
