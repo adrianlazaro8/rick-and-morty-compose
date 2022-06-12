@@ -83,4 +83,7 @@ dependencies {
     androidTestAnnotationProcessor "com.google.dagger:hilt-compiler:$hilt_version"
 
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+    debugImplementation "com.github.chuckerteam.chucker:library:$chucker_version"
+
+    releaseImplementation "com.github.chuckerteam.chucker:library-no-op:$chucker_version"
 }
