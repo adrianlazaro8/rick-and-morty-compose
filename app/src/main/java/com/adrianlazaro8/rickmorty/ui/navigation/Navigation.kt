@@ -29,7 +29,7 @@ fun Navigation(navController: NavHostController) {
         composable(Screens.CHARACTERS_DETAIL.route,
             arguments = listOf(navArgument("id") { type = NavType.StringType })
         ) {
-            CharacterDetailScreen(id = it.arguments?.getString("id") ?: "")
+            CharacterDetailScreen()
         }
         composable(Screens.LOCATIONS.route) {
             LocationsScreen()
