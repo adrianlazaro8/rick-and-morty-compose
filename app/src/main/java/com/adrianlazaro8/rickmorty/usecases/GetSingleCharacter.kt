@@ -4,11 +4,10 @@ import arrow.core.Either
 import com.adrianlazaro8.rickmorty.data.CharactersRepository
 import com.adrianlazaro8.rickmorty.domain.Character
 import com.adrianlazaro8.rickmorty.domain.Error
-import com.adrianlazaro8.rickmorty.domain.PaginatedResult
 
 class GetSingleCharacter(private val charactersRepository: CharactersRepository) :
-    UseCase<Character?> {
+    UseCaseInputParam<String, Character?> {
 
-    override suspend fun invoke(): Either<Error, Character?> =
-        charactersRepository.getSingleCharacter("1")
+    override suspend operator fun invoke(characterId: String): Either<Error, Character?> =
+        charactersRepository.getSingleCharacter(characterId)
 }
