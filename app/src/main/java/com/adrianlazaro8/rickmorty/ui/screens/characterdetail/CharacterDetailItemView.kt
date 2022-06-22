@@ -1,5 +1,6 @@
 package com.adrianlazaro8.rickmorty.ui.screens.characterdetail
 
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -33,24 +34,25 @@ fun CharacterDetailItemView(
         },
         ifRight = {
             it?.let { character ->
-                Box {
-                    Card(
-                        modifier = Modifier
-                            .height(200.dp)
-                            .padding(4.dp)
-                            .fillMaxWidth()
-                    ) {
-                        Image(
-                            painter = rememberImagePainter(data = character.image),
-                            contentDescription = character.name,
-                            contentScale = ContentScale.Crop,
+                AnimatedVisibility(visible = true) {
+                    Box {
+                        Card(
+                            elevation = 10.dp,
                             modifier = Modifier
+                                .height(300.dp)
+                                .padding(4.dp)
                                 .fillMaxWidth()
-                        )
+                        ) {
+                            Image(
+                                painter = rememberImagePainter(data = character.image),
+                                contentDescription = character.name,
+                                contentScale = ContentScale.Crop,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                            )
+                        }
+                        //Footer with box containig character info
                     }
-                    //Header nav
-                    // Background image
-                    //Footer with box containig character info
                 }
             }
 
