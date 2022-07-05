@@ -7,6 +7,7 @@ import com.adrianlazaro8.rickmorty.domain.Character
 import com.adrianlazaro8.rickmorty.domain.Error
 import com.adrianlazaro8.rickmorty.domain.PaginatedResult
 import com.adrianlazaro8.rickmorty.usecases.GetAllCharacters
+import com.adrianlazaro8.rickmorty.usecases.GetPaginatedCharacters
 import io.mockk.MockKAnnotations
 import io.mockk.Runs
 import io.mockk.coEvery
@@ -32,6 +33,9 @@ class CharactersViewModelTest {
     @RelaxedMockK
     lateinit var getAllCharacters: GetAllCharacters
 
+    @RelaxedMockK
+    lateinit var getPaginatedCharacter: GetPaginatedCharacters
+
     private lateinit var vm: CharactersViewModel
 
     @OptIn(ExperimentalCoroutinesApi::class)
@@ -39,7 +43,7 @@ class CharactersViewModelTest {
     fun setUp() {
         MockKAnnotations.init(this)
         Dispatchers.setMain(UnconfinedTestDispatcher())
-        vm = CharactersViewModel(getAllCharacters)
+        vm = CharactersViewModel(getAllCharacters, getPaginatedCharacter)
     }
 
     @OptIn(ExperimentalCoroutinesApi::class)
