@@ -4,11 +4,12 @@ import com.adrianlazaro8.rickmorty.data.dto.CharacterDto
 import com.adrianlazaro8.rickmorty.data.dto.EpisodeDto
 import com.adrianlazaro8.rickmorty.data.dto.LocationDto
 import com.adrianlazaro8.rickmorty.data.dto.OriginDto
+import com.adrianlazaro8.rickmorty.data.mappers.toDomainLocation
 import com.adrianlazaro8.rickmorty.domain.*
-import org.junit.Assert
 import org.junit.Assert.*
 
 import org.junit.Test
+import toDomainCharacter
 
 class MappersTest {
 
