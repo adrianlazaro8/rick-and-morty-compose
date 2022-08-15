@@ -4,8 +4,8 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.GridCells
-import androidx.compose.foundation.lazy.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -31,7 +31,7 @@ fun LazyVerticalGridWithHeader(
 
         LazyVerticalGrid(
             modifier = Modifier.padding(start = 6.dp, end = 6.dp),
-            cells = GridCells.Fixed(gridCellsCount),
+            columns = GridCells.Fixed(gridCellsCount),
             verticalArrangement = Arrangement.spacedBy(spacedBy)
         )
         {
