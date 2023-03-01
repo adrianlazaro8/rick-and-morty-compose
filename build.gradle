@@ -4,11 +4,11 @@ buildscript {
         hilt_version = '2.44.2'
         moshi_version = '1.14.0'
         retrofit_version = '2.9.0'
-        mockk_version = '1.12.5'
+        mockk_version = '1.13.4'
         chucker_version = '3.5.2'
-        compose_navigation_version = "2.5.1"
-        coil_compose_version = "2.1.0"
-        activity_compose_version = "1.5.1"
+        compose_navigation_version = "2.5.3"
+        coil_compose_version = "2.2.2"
+        activity_compose_version = "1.6.1"
         arrow_core_version = "1.0.1"
     }
     dependencies {

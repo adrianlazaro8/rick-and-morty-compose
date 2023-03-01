@@ -56,13 +56,13 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
     implementation "com.squareup.moshi:moshi-kotlin:$moshi_version"
     implementation "io.arrow-kt:arrow-core:$arrow_core_version"
+    implementation "androidx.activity:activity-compose:$activity_compose_version"
     implementation "io.coil-kt:coil-compose:$coil_compose_version"
     implementation "androidx.navigation:navigation-compose:$compose_navigation_version"
-    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
-    implementation 'androidx.activity:activity-compose:1.5.1'
     implementation "androidx.hilt:hilt-navigation-compose:1.0.0"
-    implementation 'androidx.paging:paging-compose:1.0.0-alpha16'
+    implementation 'androidx.paging:paging-compose:1.0.0-alpha18'
 
     kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
@@ -70,7 +70,7 @@ dependencies {
     testImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
     testImplementation 'junit:junit:4.13.2'
     testImplementation "io.mockk:mockk:$mockk_version"
-    testImplementation "androidx.arch.core:core-testing:2.1.0"
+    testImplementation "androidx.arch.core:core-testing:2.2.0"
     testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.1'
 
     testAnnotationProcessor "com.google.dagger:hilt-compiler:$hilt_version"
