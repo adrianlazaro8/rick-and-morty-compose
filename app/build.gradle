@@ -59,8 +59,8 @@ dependencies {
     implementation "androidx.activity:activity-compose:$activity_compose_version"
     implementation "io.coil-kt:coil-compose:$coil_compose_version"
     implementation "androidx.navigation:navigation-compose:$compose_navigation_version"
-    implementation 'androidx.core:core-ktx:1.9.0'
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
+    implementation 'androidx.core:core-ktx:1.10.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.1'
     implementation "androidx.hilt:hilt-navigation-compose:1.0.0"
     implementation 'androidx.paging:paging-compose:1.0.0-alpha18'
 
